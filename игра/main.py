@@ -259,11 +259,71 @@ class MainMenu:
         self.text = font.render(self.loading + " " + str(self.process) + "%", 0, (0, 0, 0))
         screen.blit(self.text, (0, 0))
         pygame.display.flip()
+        self.menu_play_new = load_image("menu_play_new.png", "data")
+        self.menu_play_new = pygame.transform.scale(self.menu_play_new, size_but)
+        self.process = int(100 / col * 32)
+        screen.blit(self.background0, (0, 0))
+        self.text = font.render(self.loading + " " + str(self.process) + "%", 0, (0, 0, 0))
+        screen.blit(self.text, (0, 0))
+        pygame.display.flip()
+        self.menu_play_new1 = load_image("menu_play_new.png", "data")
+        self.menu_play_new1 = pygame.transform.scale(self.menu_play_new1, (size_but[0]+20, size_but[1]+20))
+        self.process = int(100 / col * 33)
+        screen.blit(self.background0, (0, 0))
+        self.text = font.render(self.loading + " " + str(self.process) + "%", 0, (0, 0, 0))
+        screen.blit(self.text, (0, 0))
+        pygame.display.flip()
+        self.menu_play_load = load_image("menu_play_load.png", "data")
+        self.menu_play_load = pygame.transform.scale(self.menu_play_load, size_but)
+        self.process = int(100 / col * 34)
+        screen.blit(self.background0, (0, 0))
+        self.text = font.render(self.loading + " " + str(self.process) + "%", 0, (0, 0, 0))
+        screen.blit(self.text, (0, 0))
+        pygame.display.flip()
+        self.menu_play_load1 = load_image("menu_play_load.png", "data")
+        self.menu_play_load1 = pygame.transform.scale(self.menu_play_load1, (size_but[0]+20, size_but[1]+20))
+        self.process = int(100 / col * 35)
+        screen.blit(self.background0, (0, 0))
+        self.text = font.render(self.loading + " " + str(self.process) + "%", 0, (0, 0, 0))
+        screen.blit(self.text, (0, 0))
+        pygame.display.flip()
+        self.menu_play_delete = load_image("menu_play_delete.png", "data")
+        self.menu_play_delete = pygame.transform.scale(self.menu_play_delete, size_but)
+        self.process = int(100 / col * 36)
+        screen.blit(self.background0, (0, 0))
+        self.text = font.render(self.loading + " " + str(self.process) + "%", 0, (0, 0, 0))
+        screen.blit(self.text, (0, 0))
+        pygame.display.flip()
+        self.menu_play_delete1 = load_image("menu_play_delete.png", "data")
+        self.menu_play_delete1 = pygame.transform.scale(self.menu_play_delete1, (size_but[0]+20, size_but[1]+20))
+        self.process = int(100 / col * 37)
+        screen.blit(self.background0, (0, 0))
+        self.text = font.render(self.loading + " " + str(self.process) + "%", 0, (0, 0, 0))
+        screen.blit(self.text, (0, 0))
+        pygame.display.flip()
 
     def update(self, x1, y1):
         screen.blit(self.background0, (0, 0))
         screen.blit(self.background1, (-150 + x1, -150 + y1))
         Fps(fps_True)
+        if menu == 2:
+            global grafic
+            if st == 1:
+                screen.blit(self.menu_setting_back1, (width/10.3-10, height/1.19-10))
+            else:
+                screen.blit(self.menu_setting_back, (width/10.3, height/1.19))
+            if st == 2:
+                screen.blit(self.menu_play_new1, (width/2-width2/2-10, height/10*3-height2-10))
+            else:
+                screen.blit(self.menu_play_new, (width/2-width2/2, height/10*3-height2))
+            if st == 3:
+                screen.blit(self.menu_play_load1, (width/2-width2/2-10, height/10*6-height2-10))
+            else:
+                screen.blit(self.menu_play_load, (width/2-width2/2, height/10*6-height2))
+            if st == 4:
+                screen.blit(self.menu_play_delete1, (width/2-width2/2-10, height/10*9-height2-10))
+            else:
+                screen.blit(self.menu_play_delete, (width/2-width2/2, height/10*9-height2))
         if menu == 1:
             screen.blit(self.menu_setting, (70, 60))
             global grafic
@@ -383,7 +443,7 @@ class MainMenu:
             size_but = width2, height2 = int(size[0]/2.72), int(size[1]/3.62)
             screen = pygame.display.set_mode(size, pygame.RESIZABLE | pygame.FULLSCREEN)
         else:
-            size = width, height = 1360, 765
+            size = width, height = 1360, 725
             size_command = 1
             size_fone = width1, height1 = int(size[0]*1.5), int(size[1]*1.5)
             size_but = width2, height2 = int(size[0]/2.72), int(size[1]/3.62)
@@ -430,7 +490,7 @@ pygame.display.set_caption('Uncknow game')
 pygame.display.set_icon(load_image("start_menu_background.png", "data"))
 all_sprites = pygame.sprite.Group()
 clock = pygame.time.Clock()
-col = 31
+col = 37
 st = 0
 fps = 60
 bt = 1
@@ -444,7 +504,7 @@ if full == True:
     size_but = width2, height2 = int(size[0]/2.72), int(size[1]/3.62)
     screen = pygame.display.set_mode(size, pygame.RESIZABLE | pygame.FULLSCREEN)
 else:
-    size = width, height = 1360, 765
+    size = width, height = 1360, 725
     size_command = 1
     size_fone = width1, height1 = int(size[0]*1.14), int(size[1]*1.18)
     size_but = width2, height2 = int(size[0]/2.72), int(size[1]/3.62)
@@ -468,24 +528,29 @@ while running:
                 main.dsetting()
             elif width/2-width2/2 < i.pos[0] < width/2+width2/2 and height/10*9 > i.pos[1] > height/10*9-height2-10 and menu == 0:
                 st = 3
-                main.dclose()
-            elif width/10.3 < i.pos[0] < width/10.3 + size[0] / 6.47 and height/1.19 < i.pos[1] < height/1.19 + size[1] / 7.1 and menu == 1:
+            elif width/2-width2/2 < i.pos[0] < width/2+width2/2 and height/10*3 > i.pos[1] > height/10*3-height2-10 and menu == 2:
+                st = 2
+            elif width/2-width2/2 < i.pos[0] < width/2+width2/2 and height/10*6 > i.pos[1] > height/10*6-height2-10 and menu == 2:
+                st = 3
+            elif width/2-width2/2 < i.pos[0] < width/2+width2/2 and height/10*9 > i.pos[1] > height/10*9-height2-10 and menu == 2:
+                st = 4
+            elif width/10.3 < i.pos[0] < width/10.3 + size[0] / 6.47 and height/1.19 < i.pos[1] < height/1.19 + size[1] / 7.1 and (menu == 1 or menu == 2):
                 st = 1
                 main.dback()
             else:
                 st = 0
         if i.type == pygame.MOUSEBUTTONDOWN:
             if width/2-width2/2 < i.pos[0] < width/2+width2/2 and height/10*3 > i.pos[1] > height/10*3-height2-10 and menu == 0:
-                pass
+                menu = 2
             if width/2-width2/2 < i.pos[0] < width/2+width2/2 and height/10*6 > i.pos[1] > height/10*6-height2-10 and menu == 0:
                 menu = 1
                 main.update(0, 0)
                 pygame.display.flip()
-                sleep(0.2)
+                sleep(0.4)
             if width/2-width2/2 < i.pos[0] < width/2+width2/2 and height/10*9 > i.pos[1] > height/10*9-height2-10 and menu == 0:
                 running = False
                 break
-            if width/10.3 < i.pos[0] < width/10.3 + size[0] / 6.47 and height/1.19 < i.pos[1] < height/1.19 + size[1] / 7.1 and menu == 1:
+            if width/10.3 < i.pos[0] < width/10.3 + size[0] / 6.47 and height/1.19 < i.pos[1] < height/1.19 + size[1] / 7.1 and (menu == 1 or menu == 2):
                 menu = 0
             if size[0]/2.48 < i.pos[0] < size[0]/2.48 + size[0]/6.47 and size[1]/8.7 < i.pos[1] < size[1]/8.7 + size[1]/7.1 and menu == 1:
                 main.d480()
