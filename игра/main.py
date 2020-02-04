@@ -487,7 +487,7 @@ class MainMenu:
 
 pygame.init()
 pygame.display.set_caption('Uncknow game')
-pygame.display.set_icon(load_image("start_menu_background.png", "data"))
+pygame.display.set_icon(load_image("icon.png", "data"))
 all_sprites = pygame.sprite.Group()
 clock = pygame.time.Clock()
 col = 37
