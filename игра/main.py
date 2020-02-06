@@ -423,7 +423,7 @@ class MainMenu:
         else:
             size = width, height = 920, 480
             size_command = 1
-            size_fone = width1, height1 = int(size[0]*1.5), int(size[1]*1.5)
+            size_fone = width1, height1 = int(size[0]*1.7), int(size[1]*1.7)
             size_but = width2, height2 = int(size[0]/2.72), int(size[1]/3.62)
             screen = pygame.display.set_mode(size, pygame.RESIZABLE)
         main = MainMenu()
@@ -461,7 +461,7 @@ class MainMenu:
         if full == True:
             size = width, height = 1920, 1080
             size_command = 1
-            size_fone = width1, height1 = int(size[0]*1.5), int(size[1]*1.5)
+            size_fone = width1, height1 = int(size[0]*1.7), int(size[1]*1.7)
             size_but = width2, height2 = int(size[0]/2.72), int(size[1]/3.62)
             screen = pygame.display.set_mode(size, pygame.RESIZABLE | pygame.FULLSCREEN)
         else:
@@ -487,7 +487,7 @@ class MainMenu:
 
 pygame.init()
 pygame.display.set_caption('Uncknow game')
-pygame.display.set_icon(load_image("icon.png", "data"))
+pygame.display.set_icon(load_image("button_play.png", "data"))
 all_sprites = pygame.sprite.Group()
 clock = pygame.time.Clock()
 col = 37
@@ -500,13 +500,13 @@ menu = 0
 if full == True:
     size = width, height = 1360, 765
     size_command = 1
-    size_fone = width1, height1 = int(size[0]*1.14), int(size[1]*1.18)
+    size_fone = width1, height1 = int(size[0]*1.5), int(size[1]*1.5)
     size_but = width2, height2 = int(size[0]/2.72), int(size[1]/3.62)
     screen = pygame.display.set_mode(size, pygame.RESIZABLE | pygame.FULLSCREEN)
 else:
     size = width, height = 1360, 725
     size_command = 1
-    size_fone = width1, height1 = int(size[0]*1.14), int(size[1]*1.18)
+    size_fone = width1, height1 = int(size[0]*1.5), int(size[1]*1.5)
     size_but = width2, height2 = int(size[0]/2.72), int(size[1]/3.62)
     screen = pygame.display.set_mode(size, pygame.RESIZABLE)
 pygame.display.flip()
